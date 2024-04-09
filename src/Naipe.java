@@ -6,12 +6,14 @@ public class Naipe extends JButton {
     private String palo;
     private boolean estaVolteada;
 
-    public Naipe(int valor, String palo, boolean estaVolteada){
+
+    public Naipe(int valor, String palo, boolean estaVolteada, int orden){
         this.valor = valor;
         this.palo = palo;
         this.estaVolteada = estaVolteada;
+        ImageIcon icono = new ImageIcon(this.getClass().getResource("img/"+orden+".png"));
         setLayout(new BorderLayout());
-        setIcon(new ImageIcon());
+        this.setIcon(icono);
 
     }
 
@@ -43,6 +45,10 @@ public class Naipe extends JButton {
     public void setEstaVolteada(boolean estaVolteada) {
 
         this.estaVolteada = estaVolteada;
+    }
+
+    public void volverVisible(){
+        setVisible(true);
     }
 
     @Override
