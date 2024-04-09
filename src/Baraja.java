@@ -9,13 +9,13 @@ public class Baraja {
         String[] palos;
         palos= new String[]{"oro","copa","espada","mazo"};
         Naipe auxiliar;
-        int contador=1;
+        //int contador=1; //Deja esto comentado de momento
 
         for(int i = 0; i<4; i++){
             for(int j = 1; j<=10; j++){
-                auxiliar = new Naipe(j,palos[i],false,contador);
+                auxiliar = new Naipe(j,palos[i],false);
                 naipes.add(auxiliar);
-                contador++;
+                //contador++; //Deja esto como un comentario de momento
             }
         }
     }

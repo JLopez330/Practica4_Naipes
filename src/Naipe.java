@@ -1,20 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-public class Naipe extends JButton {
+
+public class Naipe{
     private int valor;
     private String palo;
     private boolean estaVolteada;
 
 
-    public Naipe(int valor, String palo, boolean estaVolteada, int orden){
+    public Naipe(int valor, String palo, boolean estaVolteada){
         this.valor = valor;
         this.palo = palo;
         this.estaVolteada = estaVolteada;
-        ImageIcon icono = new ImageIcon(this.getClass().getResource("img/"+orden+".png"));
-        setLayout(new BorderLayout());
-        this.setIcon(icono);
-
     }
 
     public int getValor() {
@@ -45,10 +42,6 @@ public class Naipe extends JButton {
     public void setEstaVolteada(boolean estaVolteada) {
 
         this.estaVolteada = estaVolteada;
-    }
-
-    public void volverVisible(){
-        setVisible(true);
     }
 
     @Override
