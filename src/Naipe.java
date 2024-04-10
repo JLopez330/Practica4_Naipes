@@ -44,6 +44,36 @@ public class Naipe{
         this.estaVolteada = estaVolteada;
     }
 
+    /**
+     * Compara el valor de la carta con otra, regresa true si son iguales
+     * @param otraCarta
+     * @return
+     */
+    public boolean compararValorCon(Naipe otraCarta){
+        boolean esIgual;
+        if(valor == otraCarta.getValor()){
+            esIgual = true;
+        }else{
+            esIgual = false;
+        }
+        return esIgual;
+    }
+
+    /**
+     * Compara el palo de la carta con otra, regresa true si son iguales
+     * @param otraCarta
+     * @return
+     */
+    public boolean comprarPaloCon(Naipe otraCarta){
+        boolean esIgual;
+        if(palo.equals(otraCarta.getPalo())){
+            esIgual = true;
+        }else{
+            esIgual = false;
+        }
+        return esIgual;
+    }
+
     @Override
     public String toString() {
         String cadena;
