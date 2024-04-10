@@ -64,6 +64,17 @@ public class Baraja {
     }
 
     /**
+     * Crea las 4 cartas iniciales del tablero
+     */
+    public ArrayList<Naipe> getTableroInicial(){
+        ArrayList<Naipe> cartasCentrales = new ArrayList();
+        for(int i = 0; i<4; i++){
+            cartasCentrales.add(naipes.remove(0));
+        }
+        return cartasCentrales;
+    }
+
+    /**
      * Determina si es posible realizar una suma que de como resultado 15 con las cartas proporcionadas
      */
     public boolean forma15Puntos(Naipe... cartas) {
@@ -72,6 +83,7 @@ public class Baraja {
             suma += carta.getValor();
         }
         return suma == 15; //Está regresando que la suma es igual a 15?
+        //Es una comprobación que regresa un booleano de verdadero o falso
     }
 
 }
