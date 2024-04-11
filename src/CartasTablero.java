@@ -19,8 +19,32 @@ public class CartasTablero {
      * Modifica las cartas centrales por la entrada
      */
     public void tomarCentro(ArrayList<Naipe> cartas){
+
         cartasCentrales = cartas;
     }
+
+    public int getCantidadDeCartasEnTablero(){
+        return cartasCentrales.size();
+    }
+
+    /**
+     * Manda una copia de la carta en el indice X
+     */
+    public Naipe mandarCartaEn(int indice){
+        Naipe auxiliar;
+        auxiliar = cartasCentrales.get(indice-1);
+
+        return auxiliar;
+    }
+
+
+    public Naipe removerCartaEn(int indice){
+        Naipe auxiliar;
+        auxiliar = cartasCentrales.get(indice-1);
+        return auxiliar;
+    }
+
+
     /**
      * Muestra en la consola las cartas del tablero
      */

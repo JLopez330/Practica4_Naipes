@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -5,27 +6,27 @@ import java.util.Scanner;
 public class Escoba {
     private ArrayList<Jugador> jugadores;
     //private ArrayList<Naipe> cartasEnTablero;//No entiendo porque se utiliza la clase Naipe para este array
-    private ArrayList<CartasTablero> cartasCentro;
+    private CartasTablero cartasCentro;
     private Baraja baraja;
 
     private boolean elJuegoSigue = true;
 
     public Escoba(){
         jugadores = new ArrayList();
-        cartasCentro = new ArrayList();//Añadido
+        cartasCentro = new CartasTablero();
     }
 
     public void jugarJuego(){
         System.out.println("===========ESCOBA===========");
         crearJugadores();
-        crearCentro();//Añadido
         //do{
         baraja = new Baraja();
         baraja.revolverMazo();
         repartirCartas();
+        cartasTablero();
+        mostrarTablero();
         jugarTurno();
-        cartasTablero();//Añadido
-        mostrarTablero();//Añadido
+        //Añadido
         //}while(elJuegoSigue);
     }
 
@@ -46,9 +47,8 @@ public class Escoba {
     /**
      * Inicializa las cartas del centro del tablero
      */
-    public void crearCentro(){
-        cartasCentro.add(new CartasTablero());
-    }
+
+
 
     public void repartirCartas(){
         for (Jugador jugador:jugadores) {
@@ -59,24 +59,37 @@ public class Escoba {
      * Obtiene el tablero inicial de la partida. desconozco si se puede realizar sin el for
      */
     public void cartasTablero(){
-        for (CartasTablero centro:cartasCentro) {
-            centro.tomarCentro(baraja.getTableroInicial());
-        }
+        cartasCentro.tomarCentro(baraja.getNaipes(4));
     }
 
     public void jugarTurno(){
+        Scanner sc = new Scanner(System.in);
         for (Jugador player: jugadores) {
             player.mostrarMano();
+            int indiceCarta;
+            int cantidadCartas;
+            do {
+                System.out.println("Elige una carta: ");
+                indiceCarta = sc.nextInt();
+            }while(indiceCarta>player.getCantidadCartasEnMano()||indiceCarta<1);
+            do{
+                System.out.println("Elige la cantidad de cartas para sumar 15 puntos: ");
+                cantidadCartas = sc.nextInt();
+
+            }while(cantidadCartas<1 || cantidadCartas>cartasCentro.getCantidadDeCartasEnTablero());
+
         }
     }
+
+    //public ArrayList<Naipe> mandarADescarteDeJugador(){
+
+    //}
 
     /**
      * Se encarga de mostrar las cartas del tablero. dezconosco como hacerlo sin el for
      * tenme piedad que java me esta comiendo lo poco que me queda de sanidad
      */
     public void mostrarTablero(){
-        for (CartasTablero centro: cartasCentro) {
-            centro.mostrarCentro();
-        }
+        cartasCentro.mostrarCentro();
     }
 }
