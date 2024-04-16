@@ -24,7 +24,6 @@ public class Escoba {
         baraja.revolverMazo();
         repartirCartas();
         cartasTablero();
-        mostrarTablero();
         jugarTurno();
         //Añadido
         //}while(elJuegoSigue);
@@ -36,10 +35,10 @@ public class Escoba {
         do {
             System.out.println("Cantidad de Jugadores: ");
             cantidad = sc.nextInt();
-            if (cantidad<2 && cantidad >4){
+            if (cantidad<2 || cantidad >4){
                 System.out.println("La cantidad ingresada no es valida, favor de intentar de nuevo!");
             }
-        }while(cantidad<1 && cantidad>4);
+        }while(cantidad<2 || cantidad>4);
         for(int i = 0; i<cantidad; i++){
             jugadores.add(new Jugador(i+1));
         }
@@ -65,6 +64,7 @@ public class Escoba {
     public void jugarTurno(){
         Scanner sc = new Scanner(System.in);
         for (Jugador player: jugadores) {
+            mostrarTablero();
             player.mostrarMano();
             int indiceCarta;
             int cantidadCartas;
