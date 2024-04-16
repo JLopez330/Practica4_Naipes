@@ -67,14 +67,190 @@ public class Escoba {
             mostrarTablero();
             player.mostrarMano();
             int indiceCarta;
+            int indiceCartaCentral1;
+            int indiceCartaCentral2;
+            int indiceCartaCentral3;
+            int indiceCartaCentral4;
+            int indiceCartaCentral5;
+            int indiceCartaCentral6;
+            int indiceCartaCentral7;
+            int indiceCartaCentral8;
             int cantidadCartas;
             do {
-                System.out.println("Elige una carta: ");
+                System.out.println("Jugador, elije una carta: ");
                 indiceCarta = sc.nextInt();
             }while(indiceCarta>player.getCantidadCartasEnMano()||indiceCarta<1);
             do{
                 System.out.println("Elige la cantidad de cartas para sumar 15 puntos: ");
                 cantidadCartas = sc.nextInt();
+                if (cantidadCartas<=cartasCentro.getCantidadDeCartasEnTablero()){
+                    switch(cantidadCartas){
+                        case 1:
+                            do {
+                                System.out.println("Elige la primera carta que vas a tomar: ");
+                                indiceCartaCentral1 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            System.out.println(player.forma15Puntos(player.mano.get(indiceCarta),cartasCentro.cartasCentrales.get(indiceCartaCentral1)));
+                            break;
+                        case 2:
+                            do {
+                                System.out.println("Elige la primera carta que vas a tomar: ");
+                                indiceCartaCentral1 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            do {
+                                System.out.println("Elige la segunda carta que vas a tomar: ");
+                                indiceCartaCentral2 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            break;
+                        case 3:
+                            do {
+                                System.out.println("Elige la primera carta que vas a tomar: ");
+                                indiceCartaCentral1 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            do {
+                                System.out.println("Elige la segunda carta que vas a tomar: ");
+                                indiceCartaCentral2 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            do {
+                                System.out.println("Elige la tercera carta que vas a tomar: ");
+                                indiceCartaCentral3 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            break;
+                        case 4:
+                            do {
+                                System.out.println("Elige la primera carta que vas a tomar: ");
+                                indiceCartaCentral1 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            do {
+                                System.out.println("Elige la segunda carta que vas a tomar: ");
+                                indiceCartaCentral2 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            do {
+                                System.out.println("Elige la tercera carta que vas a tomar: ");
+                                indiceCartaCentral3 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            do {
+                                System.out.println("Elige la cuarta carta que vas a tomar: ");
+                                indiceCartaCentral4 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral4<1);
+                            break;
+                        case 5:
+                            do {
+                                System.out.println("Elige la primera carta que vas a tomar: ");
+                                indiceCartaCentral1 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            do {
+                                System.out.println("Elige la segunda carta que vas a tomar: ");
+                                indiceCartaCentral2 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            do {
+                                System.out.println("Elige la tercera carta que vas a tomar: ");
+                                indiceCartaCentral3 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            do {
+                                System.out.println("Elige la cuarta carta que vas a tomar: ");
+                                indiceCartaCentral4 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral4<1);
+                            do {
+                                System.out.println("Elige la quinta carta que vas a tomar: ");
+                                indiceCartaCentral5 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral5<1);
+                            break;
+                        case 6:
+                            do {
+                                System.out.println("Elige la primera carta que vas a tomar: ");
+                                indiceCartaCentral1 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            do {
+                                System.out.println("Elige la segunda carta que vas a tomar: ");
+                                indiceCartaCentral2 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            do {
+                                System.out.println("Elige la tercera carta que vas a tomar: ");
+                                indiceCartaCentral3 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            do {
+                                System.out.println("Elige la cuarta carta que vas a tomar: ");
+                                indiceCartaCentral4 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral4<1);
+                            do {
+                                System.out.println("Elige la quinta carta que vas a tomar: ");
+                                indiceCartaCentral5 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral5<1);
+                            do {
+                                System.out.println("Elige la sexta carta que vas a tomar: ");
+                                indiceCartaCentral6 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral6<1);
+                            break;
+                        case 7:
+                            do {
+                                System.out.println("Elige la primera carta que vas a tomar: ");
+                                indiceCartaCentral1 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            do {
+                                System.out.println("Elige la segunda carta que vas a tomar: ");
+                                indiceCartaCentral2 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            do {
+                                System.out.println("Elige la tercera carta que vas a tomar: ");
+                                indiceCartaCentral3 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            do {
+                                System.out.println("Elige la cuarta carta que vas a tomar: ");
+                                indiceCartaCentral4 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral4<1);
+                            do {
+                                System.out.println("Elige la quinta carta que vas a tomar: ");
+                                indiceCartaCentral5 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral5<1);
+                            do {
+                                System.out.println("Elige la sexta carta que vas a tomar: ");
+                                indiceCartaCentral6 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral6<1);
+                            do {
+                                System.out.println("Elige la septima carta que vas a tomar: ");
+                                indiceCartaCentral7 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral7<1);
+                            break;
+                        case 8:
+                            do {
+                                System.out.println("Elige la primera carta que vas a tomar: ");
+                                indiceCartaCentral1 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            do {
+                                System.out.println("Elige la segunda carta que vas a tomar: ");
+                                indiceCartaCentral2 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            do {
+                                System.out.println("Elige la tercera carta que vas a tomar: ");
+                                indiceCartaCentral3 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            do {
+                                System.out.println("Elige la cuarta carta que vas a tomar: ");
+                                indiceCartaCentral4 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral4<1);
+                            do {
+                                System.out.println("Elige la quinta carta que vas a tomar: ");
+                                indiceCartaCentral5 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral5<1);
+                            do {
+                                System.out.println("Elige la sexta carta que vas a tomar: ");
+                                indiceCartaCentral6 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral6<1);
+                            do {
+                                System.out.println("Elige la septima carta que vas a tomar: ");
+                                indiceCartaCentral7 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral7<1);
+                            do {
+                                System.out.println("Elige la octava carta que vas a tomar: ");
+                                indiceCartaCentral8 = sc.nextInt();
+                            }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral8<1);
+                            break;
+                        default:
+                            System.out.println("No se puede hacer una sumatoria de 15 con esas cartas");
+                            break;
+                    }
+                }
 
             }while(cantidadCartas<1 || cantidadCartas>cartasCentro.getCantidadDeCartasEnTablero());
 
