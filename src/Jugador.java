@@ -65,12 +65,12 @@ public class Jugador {
         return esValido;
     }
 
-    public int forma15Puntos(Naipe... cartas) {
+    public boolean forma15Puntos(Naipe... cartas) {
         int suma = 0;
         for (Naipe carta : cartas) {
             suma += carta.getValor();
         }
-        return suma; //Está regresando que la suma es igual a 15?
+        return suma==15; //Está regresando que la suma es igual a 15?
         //Es una comprobación que regresa un booleano de verdadero o falso
     }
 
