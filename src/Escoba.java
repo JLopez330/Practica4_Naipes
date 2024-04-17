@@ -76,6 +76,8 @@ public class Escoba {
             int indiceCartaCentral7;
             int indiceCartaCentral8;
             int cantidadCartas;
+            Naipe auxiliar;
+            ArrayList<Naipe> naipesAlDescarte = new ArrayList();
             do {
                 System.out.println("Jugador, elije una carta: ");
                 indiceCarta = sc.nextInt();
@@ -92,6 +94,11 @@ public class Escoba {
                             }while(indiceCarta>cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
                             System.out.println(player.forma15Puntos(player.mano.get(indiceCarta-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral1-1)));
+                            //El Naipe auxiliar representa la carta usada por el jugador
+                                    auxiliar=player.mano.remove(indiceCarta-1);
+                            //Los Naipes Al Descarte varian dependiendo del case
+                                    naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral1-1));
+                                    player.mandarADescarteDeJugador(auxiliar,naipesAlDescarte);
                             break;
                         case 2:
                             do {
@@ -105,6 +112,12 @@ public class Escoba {
                             System.out.println(player.forma15Puntos(player.mano.get(indiceCarta-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral1-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral2-1)));
+                            //El Naipe auxiliar representa la carta usada por el jugador
+                                auxiliar=player.mano.remove(indiceCarta-1);
+                             //Los Naipes Al Descarte varian dependiendo del case
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral2-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral1-1));
+                                player.mandarADescarteDeJugador(auxiliar,naipesAlDescarte);
                             break;
                         case 3:
                             do {
@@ -123,6 +136,13 @@ public class Escoba {
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral1-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral2-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral3-1)));
+                                //El Naipe auxiliar representa la carta usada por el jugador
+                                auxiliar=player.mano.remove(indiceCarta-1);
+                                //Los Naipes Al Descarte varian dependiendo del case
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral3-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral2-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral1-1));
+                                player.mandarADescarteDeJugador(auxiliar,naipesAlDescarte);
                             break;
                         case 4:
                             do {
@@ -146,6 +166,14 @@ public class Escoba {
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral2-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral3-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral4-1)));
+                                //El Naipe auxiliar representa la carta usada por el jugador
+                                auxiliar=player.mano.remove(indiceCarta-1);
+                                //Los Naipes Al Descarte varian dependiendo del case
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral4-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral3-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral2-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral1-1));
+                                player.mandarADescarteDeJugador(auxiliar,naipesAlDescarte);
                             break;
                         case 5:
                             do {
@@ -174,6 +202,16 @@ public class Escoba {
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral3-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral4-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral5-1)));
+                                //El Naipe auxiliar representa la carta usada por el jugador
+                                auxiliar=player.mano.remove(indiceCarta-1);
+                                //Los Naipes Al Descarte varian dependiendo del case
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral5-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral4-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral3-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral2-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral1-1));
+                                player.mandarADescarteDeJugador(auxiliar,naipesAlDescarte);
+
                             break;
                         case 6:
                             do {
@@ -207,6 +245,17 @@ public class Escoba {
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral4-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral5-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral6-1)));
+                                //El Naipe auxiliar representa la carta usada por el jugador
+                                auxiliar=player.mano.remove(indiceCarta-1);
+                                //Los Naipes Al Descarte varian dependiendo del case
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral6-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral5-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral4-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral3-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral2-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral1-1));
+                                player.mandarADescarteDeJugador(auxiliar,naipesAlDescarte);
+
                             break;
                         case 7:
                             do {
@@ -245,6 +294,18 @@ public class Escoba {
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral5-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral6-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral7-1)));
+                                //El Naipe auxiliar representa la carta usada por el jugador
+                                auxiliar=player.mano.remove(indiceCarta-1);
+                                //Los Naipes Al Descarte varian dependiendo del case
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral7-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral6-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral5-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral4-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral3-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral2-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral1-1));
+                                player.mandarADescarteDeJugador(auxiliar,naipesAlDescarte);
+
                             break;
                         case 8:
                             do {
@@ -288,7 +349,18 @@ public class Escoba {
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral6-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral7-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral8-1)));
-                            break;
+                                //El Naipe auxiliar representa la carta usada por el jugador
+                                auxiliar=player.mano.remove(indiceCarta-1);
+                                //Los Naipes Al Descarte varian dependiendo del case
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral7-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral6-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral5-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral4-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral3-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral2-1));
+                                naipesAlDescarte.add(cartasCentro.cartasCentrales.remove(indiceCartaCentral1-1));
+                                player.mandarADescarteDeJugador(auxiliar,naipesAlDescarte);
+                                break;
                         default:
                             System.out.println("No se puede hacer una sumatoria de 15 con esas cartas");
                             break;
@@ -300,9 +372,6 @@ public class Escoba {
         }
     }
 
-    //public ArrayList<Naipe> mandarADescarteDeJugador(){
-
-    //}
 
     /**
      * Se encarga de mostrar las cartas del tablero. dezconosco como hacerlo sin el for

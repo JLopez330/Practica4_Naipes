@@ -74,5 +74,15 @@ public class Jugador {
         //Es una comprobación que regresa un booleano de verdadero o falso
     }
 
+    /**
+     * Recibe un ArrayList de cartas y las manda al descarte del jugador.
+     */
+    public void mandarADescarteDeJugador(Naipe naipeElegido, ArrayList<Naipe>naipes){
+        cartasObtenidas.add(naipeElegido);
+        for (Naipe naipe:naipes) {
+            cartasObtenidas.add(naipe);
+        }
+    }
+
 
 }
