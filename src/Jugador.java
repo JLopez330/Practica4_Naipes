@@ -7,45 +7,50 @@ public class Jugador {
     int puntos;
     int idJugador;
 
-    public Jugador(int idJugador){
+    /**
+    Crea al jugador junto con sus atributos iniciales
+     */
+    public Jugador(int idJugador) {
         mano = new ArrayList();
         cartasObtenidas = new ArrayList<>();
         cantidadEscobas = 0;
         puntos = 0;
-        this.idJugador=idJugador;
+        this.idJugador = idJugador;
 
     }
 
-    public int getCantidadEscobas(){
-        return cantidadEscobas;
-    }
-
-    public int getPuntos(){
-        return puntos;
-    }
-
-    public int getIdJugador(){
+    /**
+    Regresa la id del jugador
+     */
+    public int getIdJugador() {
         return idJugador;
     }
 
-    public int getCantidadCartasEnMano(){
+    /**
+    Devuelve la cantidad de cartas en la mano
+     */
+    public int getCantidadCartasEnMano() {
         return mano.size();
     }
 
+    /**
+    Devuelve la cantidad de cartas que se encuentran en el descarte total del jugador
+     */
     public int getCantidadDeCartasEnDescarte(){
         return cartasObtenidas.size();
     }
 
-    public void tomarCarta(Naipe carta){
 
-        mano.add(carta);
-    }
-
+    /**
+    Devuelve la cantidad de cartas en la mano del jugador
+     */
     public void tomarMano(ArrayList<Naipe> cartas){
-
         mano = cartas;
     }
 
+    /**
+    Imprime las cartas del jugador en la consola
+     */
     public void mostrarMano(){
         System.out.println("Mano de Jugador "+idJugador+":");
         for (Naipe carta:mano) {
@@ -54,21 +59,10 @@ public class Jugador {
         System.out.println("");
     }
 
-    public boolean forma15Puntos(ArrayList<Naipe> cartas, int indice) {
-        Naipe auxiliar = mano.get(indice-1);
-        int suma = auxiliar.getValor();
-        boolean esValido = true;
-        for (Naipe carta : cartas) {
-            suma+=carta.getValor();
-        }
-        if(suma == 15){
-            esValido=true;
-        }else{
-            esValido=false;
-        }
-        return esValido;
-    }
 
+    /**
+    Comprueba si un arreglo de cartas puede sumar la cantidad de 15 puntos
+     */
     public boolean forma15Puntos(Naipe... cartas) {
         int suma = 0;
         for (Naipe carta : cartas) {

@@ -5,17 +5,22 @@ import java.util.Scanner;
 //La Clase encarga del control del juego
 public class Escoba {
     private ArrayList<Jugador> jugadores;
-    //private ArrayList<Naipe> cartasEnTablero;//No entiendo porque se utiliza la clase Naipe para este array
     private CartasTablero cartasCentro;
     private Baraja baraja;
 
     private boolean elJuegoSigue = true;
 
-    public Escoba(){
+    /**
+    Es el constructor de la clase y se encarga de inicializar el array de jugadores y a las cartas del centro
+     */
+    public Escoba() {
         jugadores = new ArrayList();
         cartasCentro = new CartasTablero();
     }
 
+    /**
+    Es el método que se encarga de realizar el ciclo de juego por el que se llevara a cabo la partida
+     */
     public void jugarJuego(){
         System.out.println("===========ESCOBA===========");
         crearJugadores();
@@ -25,11 +30,14 @@ public class Escoba {
         cartasTablero();
         do{
         jugarTurno();
-        elJuegoSigue=verificarJuego(); //Quitar Comentario ya que se pueda jugar la ronda entera
+        elJuegoSigue=verificarJuego();
         }while(elJuegoSigue);
         nombrarGanador();
     }
 
+    /**
+    Se encarga de crear el número de jugadores especificado dentro de la misma clase
+     */
     public void crearJugadores(){
         int cantidad;
         Scanner sc = new Scanner(System.in);
@@ -56,12 +64,15 @@ public class Escoba {
         }
     }
     /**
-     * Obtiene el tablero inicial de la partida. desconozco si se puede realizar sin el for
+     * Obtiene el tablero inicial de la partida. Desconozco si se puede realizar sin el for
      */
     public void cartasTablero(){
         cartasCentro.tomarCentro(baraja.getNaipes(4));
     }
 
+    /**
+    Este método se encarga de realizar un turno por cada jugador siempre y cuando se cumplan las condiciones
+     */
     public void jugarTurno(){
         Scanner sc = new Scanner(System.in);
         for (Jugador player: jugadores) {
@@ -84,7 +95,7 @@ public class Escoba {
             Naipe auxiliar;
             ArrayList<Naipe> naipesAlDescarte = new ArrayList();
             do {
-                System.out.println("Jugador, elije una carta: ");
+                System.out.println("Jugador" + player.getIdJugador() +", elije una carta: ");
                 indiceCarta = sc.nextInt();
             }while(indiceCarta>player.getCantidadCartasEnMano()||indiceCarta<1);
             do{
@@ -430,8 +441,7 @@ public class Escoba {
 
 
     /**
-     * Se encarga de mostrar las cartas del tablero. dezconosco como hacerlo sin el for
-     * tenme piedad que java me esta comiendo lo poco que me queda de sanidad
+     * Se encarga de mostrar las cartas del tablero. Desconozco como hacerlo sin el for
      */
     public void mostrarTablero(){
 
@@ -457,7 +467,7 @@ public class Escoba {
     }
 
     /**
-     * Hace el calculo para mostrar quien es el jugador ganador de la partida
+     * Hace el cálculo para mostrar quien es el jugador ganador de la partida
      */
     public void nombrarGanador(){
         int cantidadCartasMasAlta=0;

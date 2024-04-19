@@ -35,13 +35,6 @@ public class Baraja {
     }
 
     /**
-     * Barajea el Mazo de cartas
-     */
-    public void mostrarBaraja() {
-        naipes.forEach(System.out::println);
-    }
-
-    /**
      * Revuelve las cartas en el mazo
      */
     public void revolverMazo() {
@@ -70,27 +63,5 @@ public class Baraja {
         return cartas;
     }
 
-    /**
-     * Crea las 4 cartas iniciales del tablero
-     */
-    public ArrayList<Naipe> getTableroInicial(){
-        ArrayList<Naipe> cartasCentrales = new ArrayList();
-        for(int i = 0; i<4; i++){
-            cartasCentrales.add(naipes.remove(0));
-        }
-        return cartasCentrales;
-    }
-
-    /**
-     * Determina si es posible realizar una suma que de como resultado 15 con las cartas proporcionadas
-     */
-    public boolean forma15Puntos(Naipe... cartas) {
-        int suma = 0;
-        for (Naipe carta : cartas) {
-            suma += carta.getValor();
-        }
-        return suma == 15; //Está regresando que la suma es igual a 15?
-        //Es una comprobación que regresa un booleano de verdadero o falso
-    }
 
 }
