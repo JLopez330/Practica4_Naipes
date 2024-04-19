@@ -478,7 +478,12 @@ public class Escoba {
         }
 
         System.out.println("Ganador de la Partida");
-        System.out.println("Jugador "+idDelGanador);
+        if(idDelGanador!=-1){
+            System.out.println("Jugador "+idDelGanador);
+        }else{
+            System.out.println("Nadie...");
+        }
+
 
         System.out.println("Gracias por Jugar!");
     }
