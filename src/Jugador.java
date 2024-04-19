@@ -32,6 +32,10 @@ public class Jugador {
         return mano.size();
     }
 
+    public int getCantidadDeCartasEnDescarte(){
+        return cartasObtenidas.size();
+    }
+
     public void tomarCarta(Naipe carta){
 
         mano.add(carta);

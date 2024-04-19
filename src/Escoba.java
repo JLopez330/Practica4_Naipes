@@ -27,6 +27,7 @@ public class Escoba {
         jugarTurno();
         elJuegoSigue=verificarJuego(); //Quitar Comentario ya que se pueda jugar la ronda entera
         }while(elJuegoSigue);
+        nombrarGanador();
     }
 
     public void crearJugadores(){
@@ -453,6 +454,33 @@ public class Escoba {
             juegoSigue=false;
         }
         return juegoSigue;
+    }
+
+    /**
+     * Hace el calculo para mostrar quien es el jugador ganador de la partida
+     */
+    public void nombrarGanador(){
+        int cantidadCartasMasAlta=0;
+        int idDelGanador=-1;
+
+        for (Jugador jugador:jugadores) {
+            if(jugador.getCantidadDeCartasEnDescarte()>cantidadCartasMasAlta){
+                cantidadCartasMasAlta= jugador.getCantidadDeCartasEnDescarte();
+                idDelGanador=jugador.getIdJugador();
+            }
+        }
+
+        System.out.println("==========Puntuaciones finales==========");
+        for (Jugador jugador:jugadores) {
+            System.out.println("Jugador: "+jugador.getIdJugador());
+            System.out.println("Cantidad de Cartas: "+jugador.getCantidadDeCartasEnDescarte());
+            System.out.println("\n");
+        }
+
+        System.out.println("Ganador de la Partida");
+        System.out.println("Jugador "+idDelGanador);
+
+        System.out.println("Gracias por Jugar!");
     }
 
     }
