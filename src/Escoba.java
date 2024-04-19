@@ -19,14 +19,14 @@ public class Escoba {
     public void jugarJuego(){
         System.out.println("===========ESCOBA===========");
         crearJugadores();
-        //do{
         baraja = new Baraja();
         baraja.revolverMazo();
         repartirCartas();
         cartasTablero();
+        do{
         jugarTurno();
-        //elJuegoSigue=verificarJuego(); //Quitar Comentario ya que se pueda jugar la ronda entera
-        //}while(elJuegoSigue);
+        elJuegoSigue=verificarJuego(); //Quitar Comentario ya que se pueda jugar la ronda entera
+        }while(elJuegoSigue);
     }
 
     public void crearJugadores(){
@@ -96,7 +96,7 @@ public class Escoba {
                             do {
                                 System.out.println("Elige la primera carta que vas a tomar: ");
                                 indiceCartaCentral1 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<=1);
+                            }while((!(indiceCartaCentral1<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1)));
                             if(player.forma15Puntos(player.mano.get(indiceCarta-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral1-1))){
                             //El Naipe auxiliar representa la carta usada por el jugador
@@ -115,12 +115,12 @@ public class Escoba {
                             do {
                                 System.out.println("Elige la primera carta que vas a tomar: ");
                                 indiceCartaCentral1 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            }while(!(indiceCartaCentral1<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             //tal vez indiceCartaCentral#<=1 lo arregle
                             do {
                                 System.out.println("Elige la segunda carta que vas a tomar: ");
                                 indiceCartaCentral2 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            }while(!(indiceCartaCentral2<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             if(player.forma15Puntos(player.mano.get(indiceCarta-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral1-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral2-1))) {
@@ -141,15 +141,15 @@ public class Escoba {
                             do {
                                 System.out.println("Elige la primera carta que vas a tomar: ");
                                 indiceCartaCentral1 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            }while(!(indiceCartaCentral1<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la segunda carta que vas a tomar: ");
                                 indiceCartaCentral2 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            }while(!(indiceCartaCentral2<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la tercera carta que vas a tomar: ");
                                 indiceCartaCentral3 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            }while(!(indiceCartaCentral3<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral3>=1));
                             if(player.forma15Puntos(player.mano.get(indiceCarta-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral1-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral2-1),
@@ -172,19 +172,19 @@ public class Escoba {
                             do {
                                 System.out.println("Elige la primera carta que vas a tomar: ");
                                 indiceCartaCentral1 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            }while(!(indiceCartaCentral1<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la segunda carta que vas a tomar: ");
                                 indiceCartaCentral2 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            }while(!(indiceCartaCentral2<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la tercera carta que vas a tomar: ");
                                 indiceCartaCentral3 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            }while(!(indiceCartaCentral3<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral3>=1));
                             do {
                                 System.out.println("Elige la cuarta carta que vas a tomar: ");
                                 indiceCartaCentral4 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral4<1);
+                            }while(!(indiceCartaCentral4<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral4>=1));
                             if(player.forma15Puntos(player.mano.get(indiceCarta-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral1-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral2-1),
@@ -209,23 +209,23 @@ public class Escoba {
                             do {
                                 System.out.println("Elige la primera carta que vas a tomar: ");
                                 indiceCartaCentral1 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            }while(!(indiceCartaCentral1<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la segunda carta que vas a tomar: ");
                                 indiceCartaCentral2 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            }while(!(indiceCartaCentral2<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la tercera carta que vas a tomar: ");
                                 indiceCartaCentral3 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            }while(!(indiceCartaCentral3<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral3>=1));
                             do {
                                 System.out.println("Elige la cuarta carta que vas a tomar: ");
                                 indiceCartaCentral4 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral4<1);
+                            }while(!(indiceCartaCentral4<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral4>=1));
                             do {
                                 System.out.println("Elige la quinta carta que vas a tomar: ");
                                 indiceCartaCentral5 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral5<1);
+                            }while(!(indiceCartaCentral5<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral5>=1));
                             if(player.forma15Puntos(player.mano.get(indiceCarta-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral1-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral2-1),
@@ -252,27 +252,27 @@ public class Escoba {
                             do {
                                 System.out.println("Elige la primera carta que vas a tomar: ");
                                 indiceCartaCentral1 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            }while(!(indiceCartaCentral1<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la segunda carta que vas a tomar: ");
                                 indiceCartaCentral2 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            }while(!(indiceCartaCentral2<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la tercera carta que vas a tomar: ");
                                 indiceCartaCentral3 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            }while(!(indiceCartaCentral3<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral3>=1));
                             do {
                                 System.out.println("Elige la cuarta carta que vas a tomar: ");
                                 indiceCartaCentral4 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral4<1);
+                            }while(!(indiceCartaCentral4<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral4>=1));
                             do {
                                 System.out.println("Elige la quinta carta que vas a tomar: ");
                                 indiceCartaCentral5 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral5<1);
+                            }while(!(indiceCartaCentral5<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral5>=1));
                             do {
                                 System.out.println("Elige la sexta carta que vas a tomar: ");
                                 indiceCartaCentral6 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral6<1);
+                            }while(!(indiceCartaCentral6<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral6>=1));
                             if(player.forma15Puntos(player.mano.get(indiceCarta-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral1-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral2-1),
@@ -301,31 +301,31 @@ public class Escoba {
                             do {
                                 System.out.println("Elige la primera carta que vas a tomar: ");
                                 indiceCartaCentral1 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            }while(!(indiceCartaCentral1<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la segunda carta que vas a tomar: ");
                                 indiceCartaCentral2 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            }while(!(indiceCartaCentral2<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la tercera carta que vas a tomar: ");
                                 indiceCartaCentral3 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            }while(!(indiceCartaCentral3<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral3>=1));
                             do {
                                 System.out.println("Elige la cuarta carta que vas a tomar: ");
                                 indiceCartaCentral4 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral4<1);
+                            }while(!(indiceCartaCentral4<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral4>=1));
                             do {
                                 System.out.println("Elige la quinta carta que vas a tomar: ");
                                 indiceCartaCentral5 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral5<1);
+                            }while(!(indiceCartaCentral5<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral5>=1));
                             do {
                                 System.out.println("Elige la sexta carta que vas a tomar: ");
                                 indiceCartaCentral6 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral6<1);
+                            }while(!(indiceCartaCentral6<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral6>=1));
                             do {
                                 System.out.println("Elige la septima carta que vas a tomar: ");
                                 indiceCartaCentral7 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral7<1);
+                            }while(!(indiceCartaCentral7<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral7>=1));
                             if(player.forma15Puntos(player.mano.get(indiceCarta-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral1-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral2-1),
@@ -356,35 +356,35 @@ public class Escoba {
                             do {
                                 System.out.println("Elige la primera carta que vas a tomar: ");
                                 indiceCartaCentral1 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral1<1);
+                            }while(!(indiceCartaCentral1<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la segunda carta que vas a tomar: ");
                                 indiceCartaCentral2 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral2<1);
+                            }while(!(indiceCartaCentral2<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral1>=1));
                             do {
                                 System.out.println("Elige la tercera carta que vas a tomar: ");
                                 indiceCartaCentral3 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral3<1);
+                            }while(!(indiceCartaCentral3<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral3>=1));
                             do {
                                 System.out.println("Elige la cuarta carta que vas a tomar: ");
                                 indiceCartaCentral4 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral4<1);
+                            }while(!(indiceCartaCentral4<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral4>=1));
                             do {
                                 System.out.println("Elige la quinta carta que vas a tomar: ");
                                 indiceCartaCentral5 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral5<1);
+                            }while(!(indiceCartaCentral5<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral5>=1));
                             do {
                                 System.out.println("Elige la sexta carta que vas a tomar: ");
                                 indiceCartaCentral6 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral6<1);
+                            }while(!(indiceCartaCentral6<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral6>=1));
                             do {
                                 System.out.println("Elige la septima carta que vas a tomar: ");
                                 indiceCartaCentral7 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral7<1);
+                            }while(!(indiceCartaCentral7<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral7>=1));
                             do {
                                 System.out.println("Elige la octava carta que vas a tomar: ");
                                 indiceCartaCentral8 = sc.nextInt();
-                            }while(indiceCarta>=cartasCentro.getCantidadDeCartasEnTablero()||indiceCartaCentral8<1);
+                            }while(!(indiceCartaCentral8<=cartasCentro.getCantidadDeCartasEnTablero()&&indiceCartaCentral8>=1));
                             if(player.forma15Puntos(player.mano.get(indiceCarta-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral1-1),
                                     cartasCentro.cartasCentrales.get(indiceCartaCentral2-1),
