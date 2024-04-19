@@ -28,6 +28,13 @@ public class Baraja {
     }
 
     /**
+     * Regresa la cantidad de cartas que quedan en el mazo
+     */
+    public int getCantidadCartas(){
+        return naipes.size();
+    }
+
+    /**
      * Barajea el Mazo de cartas
      */
     public void mostrarBaraja() {

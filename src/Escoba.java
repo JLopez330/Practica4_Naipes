@@ -25,7 +25,7 @@ public class Escoba {
         repartirCartas();
         cartasTablero();
         jugarTurno();
-        //Añadido
+        //elJuegoSigue=verificarJuego(); //Quitar Comentario ya que se pueda jugar la ronda entera
         //}while(elJuegoSigue);
     }
 
@@ -429,6 +429,28 @@ public class Escoba {
      * tenme piedad que java me esta comiendo lo poco que me queda de sanidad
      */
     public void mostrarTablero(){
+
         cartasCentro.mostrarCentro();
     }
-}
+
+    /**
+     * Verificación para saber si el juego sigue en marcha
+     */
+    public boolean verificarJuego(){
+        boolean juegoSigue= true;
+        int contadorManosVacias=0;
+
+        for(Jugador jugador: jugadores){
+            if(jugador.getCantidadCartasEnMano()==0) {
+                contadorManosVacias++;
+            }
+        }
+        if(baraja.getCantidadCartas()==0 && contadorManosVacias == jugadores.size()){
+            juegoSigue=false;
+        }
+        return juegoSigue;
+    }
+
+    }
+
+
