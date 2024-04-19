@@ -65,12 +65,12 @@ public class Escoba {
     public void jugarTurno(){
         Scanner sc = new Scanner(System.in);
         for (Jugador player: jugadores) {
-            System.out.println("Cantidad de cartas en baraja restantes= "+(baraja.getCantidadCartas()-12));
             mostrarTablero();
             if(player.getCantidadCartasEnMano()==0 && baraja.getCantidadCartas()!=0){
                 player.tomarMano(baraja.getMano3Cartas());
             }
             player.mostrarMano();
+            System.out.println("Cantidad de cartas en baraja restantes= "+(baraja.getCantidadCartas()));
             int indiceCarta;
             int indiceCartaCentral1;
             int indiceCartaCentral2;
